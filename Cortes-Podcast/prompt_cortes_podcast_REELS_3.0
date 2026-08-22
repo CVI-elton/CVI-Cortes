@@ -1,0 +1,70 @@
+# 🎙️ Prompt — Análise e Geração de Cortes de Podcast
+
+Você vai atuar como um especialista em edição e repurposing de conteúdo para redes sociais.
+
+Eu vou te enviar um arquivo de transcrição de podcast chamado `transcricao.txt`. 
+Esse arquivo foi gerado pelo Whisper e contém o texto completo do episódio com os timestamps de cada trecho no seguinte formato:
+
+```
+[00:00:05 → 00:00:18] Texto da fala aqui...
+[00:00:18 → 00:00:45] Continuação da fala...
+```
+
+---
+
+## O que você deve fazer
+
+Analise toda a transcrição e identifique **[QUANTIDADE_DE_CORTES] cortes longos** (preencha a quantidade desejada no campo "Quantidade de cortes desejada" no Contexto adicional, ao final deste prompt):
+
+---
+
+### GRUPO 1 — [QUANTIDADE_DE_CORTES] vídeos longos
+
+**Regras obrigatórias:**
+- Duração mínima: 2 minutos
+- Duração máxima: 3 minutos
+- Nunca corte no meio de um assunto ou raciocínio
+- Cada corte deve ter começo, meio e fim de uma ideia completa
+- Se o assunto terminar antes de 2 minutos, inclua a transição natural para o próximo ponto até completar o tempo mínimo
+- Se o assunto terminar depois de 3 minutos, encerre no ponto mais natural antes de 3 minutos, mesmo que sobre conteúdo
+- **Os cortes devem seguir ordem cronológica estritamente crescente.** O início do corte seguinte deve ser sempre igual ou posterior ao fim do corte anterior — nunca retroceda para um trecho já usado e nunca avance "consumindo" o intervalo de tempo de outro corte. Não pode haver sobreposição de timestamps entre cortes.
+- A seleção dos cortes é por **qualidade e relevância do momento**, não por cobertura contínua do episódio: é normal e esperado que existam intervalos (gaps) sem corte entre um trecho escolhido e o próximo, sempre que o trecho pulado não tiver valor suficiente para virar um corte. O objetivo não é resumir o episódio inteiro, e sim extrair os melhores momentos, respeitando apenas a ordem crescente e a ausência de sobreposição.
+- Antes de entregar o resultado final, **revise a própria tabela de timestamps** e confirme que cada corte respeita essa ordem crescente sem sobreposição.
+
+---
+
+## Regras gerais para todos os cortes
+
+- Leia a transcrição **completa** antes de definir qualquer corte
+- Escolha os momentos de maior valor para o público do canal
+- Cada corte deve tratar de **um único assunto ou ideia**
+- Não repita assuntos entre os cortes
+- Os timestamps de início e fim devem corresponder exatamente ao que está na transcrição
+- Prefira iniciar o corte em uma fala completa, nunca no meio de uma palavra ou frase
+- Os timestamps de todos os cortes devem estar em ordem cronológica crescente e sem sobreposição (ver regra específica do GRUPO 1)
+- Se a transcrição não tiver conteúdo suficiente para gerar a quantidade de cortes solicitada com qualidade (2-3 min, sem repetir assunto), **não force a quantidade**: gere o máximo de cortes possível dentro dos critérios de qualidade e avise claramente, no início da entrega, quantos cortes foram gerados e por quê
+
+---
+## Formato de entrega
+Entregue o resultado com o seguinte formato para cada corte:
+
+```
+### 🎬 [L01] — Título descritivo do assunto
+**Início:** `00:00:00`
+**Fim:** `00:00:00`
+**Duração:** Xmin Xs
+**Conteúdo:** Descrição em 2-3 linhas explicando o que é abordado no trecho e por que ele é relevante para o público e adicione um CTA no final para interegir com o publico do Instagram.
+**Hashtags:** Nas hashtags para Reels Instagram, mantenha uma lógica consistente com 3 camadas em cada corte - 'Tema central do corte', 'Tema geral do episódio', 'Alcance e comunidade'. Use de 2 a 3 hashtags por camada (total de 6 a 9 hashtags por corte).
+```
+
+Ao final, inclua uma **tabela resumo** com todos os [QUANTIDADE_DE_CORTES] cortes, contendo: número, tipo (Longo), título resumido, início, fim e duração.
+
+IMPORTANTE — Título (para thumbnail/capa do Reels):
+- O título precisa ser **curto e chamativo**, pensado para virar a capa (thumbnail) do Reels — até aproximadamente 6 a 8 palavras (ou ~45 caracteres), para garantir legibilidade em formato vertical.
+- Use gatilhos mentais quando fizer sentido para o conteúdo do corte, como: gancho de contradição, pergunta direta, dado chocante, curiosidade ou urgência.
+- O título precisa ser **coerente com o assunto real abordado no corte** — evite clickbait que prometa algo que o corte não entrega.
+
+---
+## Formato do arquivo de entrega
+Entregue o resultado como um artifact em **Markdown (.md)**, para que fique disponível no painel lateral com opções de copiar e baixar (a impressão/exportação em PDF pode ser feita pelo navegador a partir dessa visualização).
+
