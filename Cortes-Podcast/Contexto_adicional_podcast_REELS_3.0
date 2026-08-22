@@ -1,0 +1,15 @@
+## Contexto adicional (preencha antes de usar)
+
+> ⚠️ Antes de colar este prompt, complete as informações abaixo para que o IA entenda melhor o seu podcast e o público-alvo:
+
+- **Quantidade de cortes desejada:** ___ (esse número substitui automaticamente todas as menções a "[QUANTIDADE_DE_CORTES]" neste prompt — preencha uma única vez aqui)
+- **Nome do podcast:** _______________
+- **Tema geral do episódio:** _______________
+- **Público-alvo:** _______________
+- **Convidado(a) (se houver):** _______________
+- **Observações especiais** (assuntos para evitar, momentos que você já sabe que quer incluir, contexto sobre o convidado, pontos que precisam obrigatoriamente aparecer nos cortes, tom de voz desejado, etc. — preencha com as anotações relevantes para este cliente/episódio):
+ _______________
+
+---
+
+Pronto, agora leia o arquivo `transcricao.txt` anexado e execute o trabalho descrito acima.
